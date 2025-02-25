@@ -1,129 +1,138 @@
+/* --- GENERAL RESET --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: default;
+    user-select: none;
+}
 
+/* --- BACKGROUND --- */
 body {
-    background: #000000;  
-    color: #ffffff; 
+    background: #000;
+    color: #fff;
     font-family: 'Source Sans Pro', sans-serif;
-    line-height: 1.4;  
-    margin: 40px;
-    padding: 40px;
-    letter-spacing: 1px; 
-    text-align: justify;  
-    overflow-x: hidden;
+    letter-spacing: 1px;
+    line-height: 1;
+    text-align: justify;
+    overflow: hidden;
 }
 
-
-h1, h2 {
-    color: #ffffff;  
-    text-align: left;  
-    font-family: 'Source Sans Pro', sans-serif;
-    filter: blur(1px);  
-    transition: filter 0.3s ease;
+/* --- BROKEN, OVERLAPPING TEXT EFFECT --- */
+h1, h2, p {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    font-weight: bold;
+    text-transform: uppercase;
+    filter: blur(2px);
+    transition: all 0.2s ease-in-out;
+    opacity: 0.8;
+    mix-blend-mode: difference;
 }
 
+/* Randomize positioning on refresh */
 h1 {
-    font-size: 10em; 
-    margin-bottom: 50px;
-    letter-spacing: 5px;
+    font-size: 12vw;
+    animation: drift 10s infinite alternate ease-in-out;
 }
 
 h2 {
-    font-size: 7em; 
-    margin-top: 70px;
-    letter-spacing: 4px;
+    font-size: 8vw;
+    animation: drift2 12s infinite alternate ease-in-out;
 }
-
 
 p {
-    max-width: 100%; 
-    margin: 30px auto;
-    font-size: 4.5em; 
-    color: #ffffff;  
-    letter-spacing: 1px; 
-    filter: blur(1px);  
-    text-align: justify;  
+    font-size: 4vw;
+    animation: drift3 15s infinite alternate ease-in-out;
 }
 
-
-#themes, #literary-devices {
-    font-size: 4.5em;  
-    filter: blur(1px);  
-    margin: 30px auto;
+/* --- GLITCH MOVEMENT --- */
+@keyframes drift {
+    0% { transform: translate(-45%, -45%) rotate(1deg); }
+    50% { transform: translate(-50%, -50%) rotate(-1deg); }
+    100% { transform: translate(-55%, -55%) rotate(2deg); }
 }
 
+@keyframes drift2 {
+    0% { transform: translate(-48%, -52%) rotate(-1deg); }
+    50% { transform: translate(-50%, -50%) rotate(1deg); }
+    100% { transform: translate(-53%, -48%) rotate(-2deg); }
+}
 
+@keyframes drift3 {
+    0% { transform: translate(-52%, -47%) rotate(2deg); }
+    50% { transform: translate(-50%, -50%) rotate(-1deg); }
+    100% { transform: translate(-48%, -53%) rotate(3deg); }
+}
+
+/* --- RANDOM BLUR ON HOVER --- */
+h1:hover, h2:hover, p:hover {
+    filter: blur(0px);
+    opacity: 1;
+    transform: scale(1.02);
+}
+
+/* --- HOVER GLITCH ANIMATION --- */
+@keyframes glitch {
+    0% { text-shadow: 3px 3px 0px red, -3px -3px 0px blue; }
+    50% { text-shadow: -3px -3px 0px red, 3px 3px 0px blue; }
+    100% { text-shadow: 3px 3px 0px red, -3px -3px 0px blue; }
+}
+
+h1:hover, h2:hover, p:hover {
+    animation: glitch 0.2s infinite alternate;
+}
+
+/* --- NAVIGATION LINKS (STILL CHAOTIC) --- */
 ul {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     list-style-type: none;
-    padding: 0;
-    text-align: left;  
-    margin-top: 60px;
 }
 
 li {
-    margin: 30px 0;
-    opacity: 0.9;
-    transition: opacity 0.3s ease-in-out;
+    display: inline-block;
+    margin: 0 20px;
+    opacity: 0.7;
+    transition: opacity 0.2s ease-in-out;
 }
 
 li:hover {
     opacity: 1;
 }
 
-
 a {
-    color: #ffffff;  /* White links */
+    font-size: 2vw;
+    color: #fff;
     text-decoration: none;
     font-weight: bold;
-    font-size: 4.5em;  /* Larger link text */
-    transition: color 0.4s ease, text-shadow 0.4s ease;
+    text-shadow: 2px 2px 0px #ff0000, -2px -2px 0px #0000ff;
 }
 
 a:hover {
-    color: #ffffff;
-    text-decoration: underline;
+    text-shadow: 0px 0px 10px #fff;
 }
 
-
-body {
-    animation: subtleFade 20s infinite alternate ease-in-out;
-}
-
-@keyframes subtleFade {
-    from {
-        background: #000000;
-    }
-    to {
-        background: #121212;
-    }
-}
-
-
-#raven {
+/* --- CUSTOM CURSOR FIX --- */
+body::after {
+    content: "";
     position: fixed;
-    top: 10%;
-    left: -150px; /* Start off-screen */
-    width: 120px;
-    height: 80px;
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path fill="%23000000" d="M42 8c-2 0-4 0-5 2-1 2-1 4 0 5-3-2-6-2-10-1-4 1-7 3-9 6-3-1-5 0-8 2 0 3 2 4 4 5-2 1-5 2-6 5 3 3 6 2 9 1-3 2-4 6-3 10 2 0 4-1 5-2 1 3 3 6 5 8-1 1-2 2-2 3 2 2 5 2 8 2-1-2-1-3 0-5 3 1 5 2 9 2-3-2-6-4-7-7 2 0 4 0 6-1s3-2 5-3c-1-3-3-6-5-8 2 1 5 2 7 1-2-3-6-5-10-5 2-1 4-3 5-5s2-4 2-6c-1-2-3-3-5-3z"/></svg>');
-    background-size: cover;
-    opacity: 0.6; /* Slight transparency for a ghostly feel */
-    transform: rotate(10deg);
-    animation: floatRaven 20s linear infinite;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: difference;
+    transition: transform 0.1s ease;
 }
 
-
-@keyframes floatRaven {
-    0% {
-        left: -150px;
-        top: 10%;
-        transform: scale(0.8) rotate(10deg);
-    }
-    50% {
-        top: 15%; /* Slight dip in flight */
-        transform: scale(1) rotate(5deg);
-    }
-    100% {
-        left: 110%;
-        top: 5%;
-        transform: scale(0.8) rotate(10deg);
-    }
+body:hover::after {
+    transform: scale(1.5);
 }
+
