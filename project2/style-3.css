@@ -1,0 +1,91 @@
+/* style-3.css – Ugly Design */
+
+/* Set a jarring background and a clashing font family */
+body {
+    margin: 0;
+    background: yellow; /* Loud yellow */
+    font-family: "Comic Sans MS", cursive, sans-serif;  /* Infamous ugly font */
+  }
+  
+  /* Container that fills the viewport with clashing background and borders */
+  .container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: limegreen;  /* Clashing with yellow */
+    border: 10px dashed red;
+    overflow: hidden;
+  }
+  
+  /* Static heading with mismatched colors, padding, and rotation */
+  .static-heading {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    font-size: 8vw;
+    text-transform: uppercase;
+    color: purple;
+    background: orange;
+    padding: 20px;
+    border: 5px dotted blue;
+    transform: rotate(-10deg);
+    transition: transform 0.3s, background 0.3s, color 0.3s;
+  }
+  
+  /* Hover effect for static heading */
+  .static-heading:hover {
+    transform: rotate(10deg);
+    background: red;
+    color: white;
+  }
+  
+  /* Moving text containers with unbalanced positioning and clashing backgrounds */
+  .moving-text-container {
+    position: absolute;
+    width: 90%;
+    left: 5%;
+    background: pink;
+    padding: 10px;
+    border-top: 3px solid magenta;
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  /* Position the first moving text container near the middle */
+  .moving-text-container:nth-of-type(1) {
+    top: 50%;
+  }
+  
+  /* Position the second moving text container lower */
+  .moving-text-container:nth-of-type(2) {
+    top: 70%;
+  }
+  
+  /* Moving text with inconsistent sizing and annoying animation */
+  .moving-text {
+    font-size: 6vw;
+    text-transform: uppercase;
+    color: brown;
+    transition: transform 0.3s, color 0.3s;
+  }
+  
+  /* On hover, the moving text jarringly scales and changes color */
+  .moving-text:hover {
+    transform: scale(1.2) rotate(15deg);
+    color: black;
+  }
+  
+  /* Fast, disruptive horizontal scrolling animation for moving text */
+  @keyframes slide-left {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .moving-text {
+    animation: slide-left 5s linear infinite;
+  }
+  
