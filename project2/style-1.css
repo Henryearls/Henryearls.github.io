@@ -1,20 +1,20 @@
-/* Reset defaults */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Global text style using IBM Plex Mono */
+
 body {
   background: #eaeaea;
   font-family: "ibm-plex-mono", sans-serif;
   font-weight: 400;
   font-style: normal;
-  /* Text color will be inherited from the container */
+
 }
 
-/* Poster Container: 500px wide, 700px tall (660px content height with 20px padding) */
+
 .container {
   position: relative;
   width: 500px;
@@ -23,12 +23,12 @@ body {
   margin: auto;
   margin-top: calc(50vh - 350px);
   
-  /* Dark navy background; set text color to hot pink */
+
   background: #05142c;
   color: #ff69b4;
   overflow: hidden;
 
-  /* Hover inversion: all colors invert over 2 seconds */
+
   filter: invert(0%);
   transition: filter 2s;
 }
@@ -36,7 +36,7 @@ body {
   filter: invert(100%);
 }
 
-/* Pseudo-element for the background image with subtle motion (no blur) */
+
 .container::before {
   content: "";
   position: absolute;
@@ -50,7 +50,7 @@ body {
   z-index: -2;
 }
 
-/* Pseudo-element for the grain overlay */
+
 .container::after {
   content: "";
   position: absolute;
@@ -63,20 +63,8 @@ body {
   z-index: -1;
 }
 
-/* Keyframes for subtle background motion (pan/zoom effect) */
-@keyframes backgroundMotion {
-  0% {
-    transform: scale(1) translate(0, 0);
-  }
-  50% {
-    transform: scale(1.05) translate(5px, 5px);
-  }
-  100% {
-    transform: scale(1) translate(0, 0);
-  }
-}
 
-/* Large static heading */
+
 .static-heading {
   position: relative;
   z-index: 2;
@@ -86,12 +74,12 @@ body {
   margin-bottom: 20px;
 }
 
-/* Class for italic text */
+
 .italic {
   font-style: italic;
 }
 
-/* Moving text container */
+
 .moving-text-container {
   position: relative;
   z-index: 2;
@@ -101,7 +89,7 @@ body {
   margin-top: 40px;
 }
 
-/* The moving text line */
+
 .moving-text {
   position: absolute;
   white-space: nowrap;
@@ -110,7 +98,7 @@ body {
   animation: slide-left 10s linear infinite;
 }
 
-/* Horizontal scrolling keyframes */
+
 @keyframes slide-left {
   0% {
     transform: translateX(100%);

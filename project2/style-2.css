@@ -1,47 +1,45 @@
-/* style-2.css – Full Width & Typography Only (Updated for Depth and Legibility) */
 
-/* Remove default margin and set background */
 body {
     margin: 0;
-    background: #05142c;  /* Dark navy background */
+    background: #05142c;
     font-family: "ibm-plex-mono", sans-serif;
   }
   
-  /* Full viewport container with added inset shadow for depth */
+  
   .container {
     position: relative;
     width: 100vw;
     height: 100vh;
-    color: #fdf5e6;  /* Cream text */
+    color: #fdf5e6; 
     overflow: hidden;
     box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
   }
   
-  /* Static heading – centered, massive but reduced for legibility, with text-shadow for depth */
+  
   .static-heading {
     position: absolute;
     top: 20%;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 12vw;           /* Reduced from a very massive size for better fit */
+    font-size: 12vw;         
     letter-spacing: 0.2em;
     text-transform: uppercase;
     transition: transform 0.5s ease, color 0.5s ease;
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
   }
   
-  /* Hover effect on static heading */
+
   .static-heading:hover {
     transform: translateX(-50%) scale(1.1) rotate(-5deg);
-    color: #ff69b4;  /* Hot pink on hover */
+    color: #ff69b4;  
   }
   
-  /* Italic class (for any inline emphasis) */
+
   .italic {
     font-style: italic;
   }
   
-  /* Moving text containers – centered near the bottom */
+
   .moving-text-container {
     position: absolute;
     left: 50%;
@@ -50,32 +48,32 @@ body {
     text-align: center;
   }
   
-  /* First moving text container positioned at 65% vertical */
+
   .moving-text-container:nth-of-type(1) {
     top: 65%;
   }
   
-  /* Second moving text container positioned at 80% vertical */
+
   .moving-text-container:nth-of-type(2) {
     top: 80%;
   }
   
-  /* Moving text styling – slightly reduced for balance and with text-shadow */
+ 
   .moving-text {
-    font-size: 8vw;           /* Reduced size */
+    font-size: 8vw;           
     letter-spacing: 0.15em;
     text-transform: uppercase;
     transition: transform 0.5s ease, color 0.5s ease;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
   }
   
-  /* Hover effect on moving text */
+
   .moving-text:hover {
     transform: scale(1.1) rotate(5deg);
     color: #ff69b4;
   }
   
-  /* Horizontal scrolling animation for moving text */
+
   @keyframes slide-left {
     0% {
       transform: translateX(100%);
@@ -85,7 +83,7 @@ body {
     }
   }
   
-  /* Apply the scrolling animation */
+
   .moving-text {
     animation: slide-left 10s linear infinite;
   }

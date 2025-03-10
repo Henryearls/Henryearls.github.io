@@ -1,23 +1,23 @@
-/* style-3.css – Ugly Design */
 
-/* Set a jarring background and a clashing font family */
+
+
 body {
     margin: 0;
-    background: yellow; /* Loud yellow */
-    font-family: "Comic Sans MS", cursive, sans-serif;  /* Infamous ugly font */
+    background: yellow;
+    font-family: "Comic Sans MS", cursive, sans-serif;  
   }
   
-  /* Container that fills the viewport with clashing background and borders */
+  
   .container {
     position: relative;
     width: 100vw;
     height: 100vh;
-    background: limegreen;  /* Clashing with yellow */
+    background: limegreen;  
     border: 10px dashed red;
     overflow: hidden;
   }
   
-  /* Static heading with mismatched colors, padding, and rotation */
+
   .static-heading {
     position: absolute;
     top: 10%;
@@ -32,14 +32,14 @@ body {
     transition: transform 0.3s, background 0.3s, color 0.3s;
   }
   
-  /* Hover effect for static heading */
+
   .static-heading:hover {
     transform: rotate(10deg);
     background: red;
     color: white;
   }
   
-  /* Moving text containers with unbalanced positioning and clashing backgrounds */
+ 
   .moving-text-container {
     position: absolute;
     width: 90%;
@@ -51,17 +51,17 @@ body {
     overflow: hidden;
   }
   
-  /* Position the first moving text container near the middle */
+
   .moving-text-container:nth-of-type(1) {
     top: 50%;
   }
   
-  /* Position the second moving text container lower */
+
   .moving-text-container:nth-of-type(2) {
     top: 70%;
   }
   
-  /* Moving text with inconsistent sizing and annoying animation */
+ 
   .moving-text {
     font-size: 6vw;
     text-transform: uppercase;
@@ -69,13 +69,13 @@ body {
     transition: transform 0.3s, color 0.3s;
   }
   
-  /* On hover, the moving text jarringly scales and changes color */
+
   .moving-text:hover {
     transform: scale(1.2) rotate(15deg);
     color: black;
   }
   
-  /* Fast, disruptive horizontal scrolling animation for moving text */
+
   @keyframes slide-left {
     0% {
       transform: translateX(100%);
