@@ -1,19 +1,15 @@
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-
 body {
   background: #eaeaea;
-  font-family: "ibm-plex-mono", sans-serif;
+  font-family: "SchwarzKopf New", sans-serif;
   font-weight: 400;
   font-style: normal;
-
 }
-
 
 .container {
   position: relative;
@@ -22,20 +18,16 @@ body {
   padding: 20px;
   margin: auto;
   margin-top: calc(50vh - 350px);
-  
-
   background: #05142c;
   color: #ff69b4;
   overflow: hidden;
-
-
   filter: invert(0%);
   transition: filter 2s;
 }
+
 .container:hover {
   filter: invert(100%);
 }
-
 
 .container::before {
   content: "";
@@ -50,7 +42,6 @@ body {
   z-index: -2;
 }
 
-
 .container::after {
   content: "";
   position: absolute;
@@ -63,8 +54,6 @@ body {
   z-index: -1;
 }
 
-
-
 .static-heading {
   position: relative;
   z-index: 2;
@@ -74,11 +63,9 @@ body {
   margin-bottom: 20px;
 }
 
-
 .italic {
   font-style: italic;
 }
-
 
 .moving-text-container {
   position: relative;
@@ -89,7 +76,6 @@ body {
   margin-top: 40px;
 }
 
-
 .moving-text {
   position: absolute;
   white-space: nowrap;
@@ -97,7 +83,6 @@ body {
   text-transform: uppercase;
   animation: slide-left 10s linear infinite;
 }
-
 
 @keyframes slide-left {
   0% {
