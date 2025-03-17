@@ -1,25 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Class Website</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class Website</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Floating Square Styles */
+    #floatingSquare {
+      position: fixed;
+      width: 50px;
+      height: 50px;
+      background: #000;
+      z-index: 9999;
+      left: 100px;
+      top: 100px;
+    }
+  </style>
 </head>
 <body>
-
-    <h1>My Class Site</h1>
-
-    <h1>This is a new edit!</h1>
-
-    <h2>Projects</h2>
-    <ul>
+  <div class="container">
+    <header>
+      <h1>My Class Site</h1>
+    </header>
+    <main>
+      <h1>This is a new edit!</h1>
+      <h2>Projects</h2>
+      <ul>
         <li><a href="project1/index.html">Project 1</a></li>
         <li><a href="project2/index.html">Project 2</a></li>
         <li><a href="project3/index.html">Project 3</a></li>
         <li><a href="project4/index.html">Project 4</a></li>
-    </ul>
-    
-    <img src="images/flowers.jpg">
- 
+      </ul>
+    </main>
+  </div>
+
+  <!-- Floating Square -->
+  <div id="floatingSquare"></div>
+
+  <script>
+    const square = document.getElementById("floatingSquare");
+    const squareSize = 50; // in pixels
+
+    let posX = 100, posY = 100;
+    let velX = 3, velY = 3;
+
+    function animate() {
+      const windowWidth = window.innerWidth;
+      const windowHeight = window.innerHeight;
+
+      posX += velX;
+      posY += velY;
+
+      // Check for collisions with left or right boundaries
+      if (posX <= 0 || posX + squareSize >= windowWidth) {
+        velX = -velX;
+        changeColor();
+      }
+      // Check for collisions with top or bottom boundaries
+      if (posY <= 0 || posY + squareSize >= windowHeight) {
+        velY = -velY;
+        changeColor();
+      }
+
+      square.style.left = posX + "px";
+      square.style.top = posY + "px";
+
+      requestAnimationFrame(animate);
+    }
+
+    function changeColor() {
+      // Generate a random hex color
+      const randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
+      square.style.backgroundColor = randomColor;
+    }
+
+    animate();
+  </script>
 </body>
 </html>
