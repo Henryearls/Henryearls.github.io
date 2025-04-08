@@ -1,50 +1,102 @@
-/* Minimal styling */
+/* Base */
 body {
-    background: #1B1D3C;
-    color: #F5F5F5;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    padding: 50px;
-    margin: 0;
+  margin: 0;
+  padding: 0;
+  font-family: Georgia, serif;
+  background-image: url('Asset-1.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #fff8ce;
+  transition: background-image 1s ease-in-out;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Center Container */
+.container {
+  margin-top: auto;
+  margin-bottom: auto;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+/* Title + Subtitle */
+h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 0.2em;
+}
+
+h2 {
+  font-size: 1.1rem;
+  font-weight: normal;
+  margin-bottom: 2em;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Input + Button */
+input[type="text"] {
+  width: 80%;
+  max-width: 400px;
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+  background-color: #fff8ce;
+  color: #333;
+  margin-bottom: 1em;
+  outline: none;
+}
+
+button {
+  padding: 12px 25px;
+  background-color: #fff8ce;
+  color: #333;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #eee8b6;
+}
+
+/* Fortune Output */
+.log {
+  margin-top: 30px;
+  max-width: 800px;
+  padding: 0 20px 40px;
+  text-align: center;
+}
+
+.fortune-entry {
+  font-style: italic;
+  font-size: 1.5rem;
+  margin: 20px 0;
+  color: #fff8ce;
+  white-space: pre-line;
+  animation: typewriter 2s steps(40, end);
+  border-right: 2px solid #fff8ce;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+
+/* Typewriter Effect */
+@keyframes typewriter {
+  from {
+    width: 0;
   }
-  
-  h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
+  to {
+    width: 100%;
   }
-  
-  h2 {
-    font-size: 1.2em;
-    font-weight: normal;
-    margin-bottom: 30px;
-  }
-  
-  input[type="text"] {
-    width: 80%;
-    max-width: 500px;
-    padding: 10px;
-    font-size: 1em;
-    margin-bottom: 20px;
-    border: none;
-    border-radius: 4px;
-  }
-  
-  button {
-    padding: 10px 20px;
-    font-size: 1em;
-    cursor: pointer;
-    border: none;
-    border-radius: 4px;
-    background-color: #4CAF50;
-    color: white;
-  }
-  
-  .fortune {
-    margin-top: 30px;
-    font-style: italic;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.5em;
-  }
-  
+}
