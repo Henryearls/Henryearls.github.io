@@ -1,4 +1,4 @@
-/* Base */
+/* Base Layout */
 body {
   margin: 0;
   padding: 0;
@@ -13,10 +13,26 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+}
+
+/* Dark overlay on background */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.45); /* Adjust darkness here */
+  z-index: 1;
+  pointer-events: none;
 }
 
 /* Center Container */
 .container {
+  position: relative;
+  z-index: 2;
   margin-top: auto;
   margin-bottom: auto;
   text-align: center;
@@ -71,6 +87,8 @@ button:hover {
 
 /* Fortune Output */
 .log {
+  position: relative;
+  z-index: 2;
   margin-top: 30px;
   max-width: 800px;
   padding: 0 20px 40px;
